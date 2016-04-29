@@ -73,6 +73,7 @@ body{margin:0 auto;min-width:320px;max-width:640px;height:100%;background:#FFF;f
 .head-scroll .head_back,
 .head-scroll .head-cart{top:0;background:none;}
 
+.detail_list{ padding-top: 40px;}
 .btn_wrap_fixed,
 .detail_info_wrap .detail_list,
 .detail_info_wrap .detail_item{backface-visibility:hidden;-webkit-backface-visibility:hidden;-ms-backface-visibility:hidden;-webkit-transform-style:preserve-3d}
@@ -183,6 +184,9 @@ body,.detail_info_wrap .detail_item,.sku_wrap,.layer_detail_full .layer_detail_w
 .detail_info_wrap .detail_pc{overflow:hidden}
 .detail_info_wrap img,
 .detail_info_wrap table{display:block;max-width:100%;width:auto !important;height:auto !important;-webkit-user-select:none;-ms-user-select:none;user-select:none}
+.detail_list img,
+.detail_list table{display:block;max-width:100%;width:auto !important;height:auto !important;-webkit-user-select:none;-ms-user-select:none;user-select:none}
+
 .android_23_fix .btn_wrap_fixed{bottom:-120%}
 .sku_tip{display:none;margin-left:-70px;padding:5px 10px;background:rgba(0, 0, 0, 0.7);color:#fff;text-align:center;position:fixed;top:50%;left:50%;z-index:25;border-radius:4px;-webkit-box-shadow:0 0 3px 3px rgba(150, 150, 150, 0.7);box-shadow:0 0 3px 3px rgba(150, 150, 150, 0.7)}
 
@@ -586,7 +590,8 @@ body,.detail_info_wrap .detail_item,.sku_wrap,.layer_detail_full .layer_detail_w
 
 #s-action-container {
     background-color: #f5f5f5;
-    margin-bottom: 10px
+    margin-bottom: 10px;
+    padding-bottom: 42px;
 }
 
 #s-action-container .extraTip {
@@ -1223,3 +1228,132 @@ body,.detail_info_wrap .detail_item,.sku_wrap,.layer_detail_full .layer_detail_w
     color: #fff
 }
 
+#p-review {
+    padding: 10px 0 0
+}
+
+#s-review {
+    border-top: 1px solid #e5e5e5
+}
+
+#s-review .filter {
+    overflow: hidden;
+    padding: 1.2em 0 .4em;
+    margin: 0 10px;
+    border-bottom: 1px solid #e5e5e5
+}
+
+#s-review .filter li {
+    padding: 2.5% 4.5%;
+    margin: 0 2.3% 3.5% 0;
+    float: left;
+    border-radius: 10px
+}
+
+#s-review .filter li.current {
+    background-color: #DD2727;
+    color: #FFF
+}
+
+#s-review .filter li b {
+    font-weight: 400
+}
+
+#s-review .filter .egg {
+    background-color: #F5F5F5;
+    color: #666
+}
+
+#s-review .filter .flower {
+    background-color: #FEE;
+    color: #666
+}
+
+#s-review .list .item {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 20px 0;
+    margin: 0 10px
+}
+
+#s-review .list .item:last-child {
+    border: 0
+}
+
+#s-review .list blockquote {
+    font-size: 14px;
+    word-wrap: break-word
+}
+
+#s-review .list .info,#s-review .list .other,#s-review .list .sku {
+    color: #999
+}
+
+#s-review .list .add {
+    color: #666;
+    background-color: #f0f0f0;
+    padding: .5em;
+    position: relative;
+    margin-top: .8em
+}
+
+#s-review .list .add::after {
+    content: "\20";
+    position: absolute;
+    top: -10px;
+    left: 8%;
+    border: 5px solid #f0f0f0;
+    border-color: transparent transparent #f0f0f0
+}
+
+#s-review .list .info {
+    overflow: hidden;
+    margin-top: .8em
+}
+
+#s-review .list .info .author {
+    float: left
+}
+
+#s-review .list .info time {
+    float: right
+}
+
+#s-review .list .info .nike,#s-review .list .info .level,#s-review .list .info .vip {
+    vertical-align: middle
+}
+
+#s-review .list .other {
+    overflow: hidden
+}
+
+#s-review .list .other li {
+    float: left;
+    margin-right: 1em
+}
+
+#s-review .list .pics {
+    overflow: hidden
+}
+
+#s-review .list .pics li {
+    width: 55px;
+    height: 55px;
+    float: left;
+    margin: 0 .48em .5em 0;
+    background-color: #fff;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -ms-flexbox;
+    -ms-flex-pack: center;
+    -ms-flex-align: center
+}
+
+#s-review .list .pics img {
+    max-width: 100%;
+    max-height: 100%
+}
+
+.comment-filter-img {
+    display: none
+}

@@ -34,6 +34,10 @@ input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;
     float: right;
 }
 
+section,header {
+    background-color: #fff
+}
+
 
 .mui-cover {
     background-color: #fff;
@@ -305,3 +309,94 @@ html .mui-cover.show {
     color: #666
 }
 
+
+#s-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    font-size: .13rem
+}
+
+#s-header .go-desc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #a6a6a6;
+    height: 3em;
+    line-height: 3em;
+    color: #000;
+    text-align: center
+}
+
+#s-header .go-desc .dback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 40px;
+    height: 100%
+}
+
+#s-header .go-desc .dback::before {
+    content: "\e610";
+    font-family: tm-detail-font;
+    font-size: 17px
+}
+
+#s-header a {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    flex-basis: auto;
+    display: block;
+    flex-basis: 1px;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -ms-flexbox;
+    -ms-flex-pack: center;
+    -ms-flex-align: center;
+    -webkit-box-orient: vertical;
+    -ms-flex-orient: vertical;
+    height: 3em;
+    color: #666;
+    border-top: 2px solid transparent;
+    position: relative
+}
+
+#s-header a::after {
+    content: '\20';
+    position: absolute;
+    right: 0;
+    top: .4em;
+    bottom: .4em;
+    border-right: 1px solid #e5e5e5
+}
+
+#s-header a:last-child::after {
+    display: none
+}
+
+#s-header a.current {
+    border-top-color: #c40000;
+    color: #c40000
+}
+
+#s-header a.review {
+    line-height: 14px
+}
+
+#s-header a b {
+    color: #000
+}
+
+#s-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2
+}
