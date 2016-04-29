@@ -1,0 +1,307 @@
+/**
+ * Created by Jiang share fone on 14-4-17.
+ */
+html{font-family: "微软雅黑";}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0; }
+table{border-collapse:collapse;border-spacing:0}
+#header,body{z-index:1;}
+fieldset,img{border:0;vertical-align:top;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+ol,ul{list-style:none}
+i{ font-style:normal;}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}
+
+.clearfix:after {content: "."; display: block;height: 0;clear: both; visibility: hidden;}
+.clearfix {display: inline-block;}
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+
+.left-col{float: left;width: 760px; margin-right: 20px;}
+.right-col{float: right; width: 228px;}
+
+.ft-L{float: left;}
+.ft-r{float: right;}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+
+
+.mui-cover {
+    background-color: #fff;
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transform: translate3d(100%,0,0);
+    transform: translate3d(100%,0,0);
+    -webkit-transition: -webkit-transform .2s cubic-bezier(0,0,.25,1);
+    transition: transform .2s cubic-bezier(0,0,.25,1);
+    display: none
+}
+
+.mui-cover.show {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0)
+}
+
+.mui-cover>header {
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    -webkitbox-shadow: 0 1px 0 rgba(0,0,0,.05),0 .5px 0 rgba(0,0,0,.09);
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,.05),0 .5px 0 rgba(0,0,0,.09);
+    box-shadow: 0 1px 0 rgba(0,0,0,.05),0 .5px 0 rgba(0,0,0,.09);
+    background-color: #fff;
+    padding: 0 1em;
+    color: #666;
+    z-index: 1;
+    height: 44px;
+    line-height: 44px
+}
+
+.mui-cover>header h1 {
+    font-size: inherit;
+    margin: 0
+}
+
+.mui-cover>header .back {
+    padding-left: 16px;
+    background: url(//g.alicdn.com/mui/cover/3.0.0/sliding-menu/img/back@2x.png) no-repeat 0 50%;
+    -webkit-background-size: 12px 16px;
+    background-size: 12px 16px;
+    position: absolute;
+    left: 6px;
+    top: 0;
+    width: 50px;
+    color: #666
+}
+
+.mui-cover>header.hide {
+    display: none
+}
+
+.mui-cover>header.hide+.body {
+    top: 0
+}
+
+.mui-cover>.body {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+    overflow-x: hidden
+}
+
+
+html .mui-cover {
+    -webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0)
+}
+
+html .mui-cover>header {
+    overflow: hidden
+}
+
+html .mui-cover>header .back {
+    right: 0;
+    left: inherit;
+    text-indent: 100px;
+    background: 0 0;
+    width: 30px;
+    height: 100%
+}
+
+html .mui-cover>header .back::before {
+    content: '\e614';
+    font-family: tm-detail-font;
+    font-size: 14px;
+    position: absolute;
+    right: 10px
+}
+
+html .mui-cover.show {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    top: 20%
+}
+
+.mui-sku {
+    -webkit-tap-highlight-color: transparent
+}
+
+.mui-sku li {
+    padding: 1em 0 .5em
+}
+
+.mui-sku h2 {
+    color: #999;
+    margin-bottom: .6em
+}
+
+.mui-sku input {
+    display: none;
+    -webkit-tap-highlight-color: transparent
+}
+
+.mui-sku input:checked+label {
+    border-color: #b10000;
+    color: #000
+}
+
+.mui-sku input[disabled]+label {
+    color: #cfcfcf
+}
+
+.mui-sku label {
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    min-width: 2em;
+    padding: .5em 1.2em;
+    margin: 0 .5em .5em 0;
+    max-width: 100%;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 3px;
+    border-radius: 3px
+}
+
+.mui-sku label.checked {
+    border-color: #b10000;
+    color: #000
+}
+
+.mui-sku label.disabled {
+    color: #cfcfcf
+}
+
+.mui-number {
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid #b3b3b3;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    letter-spacing: 0;
+    height: .36rem;
+    line-height: .36rem;
+    overflow: hidden
+}
+
+.mui-number .increase,.mui-number .decrease,.mui-number .num {
+    float: left;
+    text-align: center
+}
+
+.mui-number .increase,.mui-number .decrease {
+    font-style: normal;
+    font-size: .24rem;
+    font-weight: 700;
+    border: 0;
+    display: inline-block;
+    width: .32rem;
+    height: 100%;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    background-color: #fff;
+    color: #5f646e
+}
+
+.mui-number .decrease {
+    border-right: 1px solid #b3b3b3
+}
+
+.mui-number .increase {
+    border-left: 1px solid #b3b3b3
+}
+
+.mui-number .num {
+    height: 100%;
+    min-width: .35rem;
+    max-width: .55rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 .02rem;
+    border: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    font-weight: 700;
+    color: #3d4245
+}
+
+.mui-number .num::-webkit-inner-spin-button {
+    display: none
+}
+
+#s-progressive {
+    -webkit-tap-highlight-color: transparent
+}
+
+#s-progressive label {
+    display: inline-block;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    min-width: 2em;
+    margin: 0 .5em .5em 0;
+    max-width: 100%;
+    width: 10.5em;
+    height: 4.5em;
+    padding: .5em;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-tap-highlight-color: transparent
+}
+
+#s-progressive label.checked {
+    border-color: #b10000;
+    color: #000
+}
+
+#s-address {
+    padding: 1em 0 .5em
+}
+
+#s-address .selecter {
+    border: 1px solid #b3b3b3;
+    padding: .3em .5em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+#s-address .selecter::before {
+    content: '\e61f';
+    font-family: tm-detail-font;
+    float: right;
+    width: 16px;
+    color: #999;
+    top: .1em;
+    position: relative
+}
+
+#s-address .cainiao-delivery {
+    padding: .3em 0 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #666
+}
+
