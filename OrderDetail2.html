@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>订单详情2</title>
+		<link rel="stylesheet" type="text/css" href="css/foundation.css">
+		
+		<style type="text/css">
+			/*top bar*/
+	.head{position:fixed;top:0;left:0;right:0;height:44px;background:#f8f8f8;border-bottom:1px solid #f0f0f0;padding-left:12px;z-index:2}
+	.head a.head_back,
+	.head .icon-home{position:absolute;top:0;width:32px;height:44px;line-height:44px;color:#333;text-align:center;}
+	.head a.head_back:hover{color:#333;}
+	.head .head_back{left:0px;font-size:28px;}
+	.head .icon-home{right:10px;font-size:38px;}
+	.head a{color:#e9ece8;position:absolute;display:inline-block;}
+	.head a.head_city{top:37px;left:145px;font-size:101%;font-weight:bold;text-shadow:0 -1px 0 #666}
+	.head a.head_city:before{content:"";display:inline-block;width:0;height:0;border-width:8px;overflow:hidden;border-color:#fff transparent transparent transparent;border-style:solid dotted dotted;-webkit-transform:rotate(-45deg);position:absolute;right:-25px;top:20px}
+	.head h2{position:absolute;left:50px;right:50px;display:inline-block;line-height:45px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#333;font-size:16px;font-weight:normal;}
+	.head h2:after{content:"";position:absolute;top:15px;left:0;height:50px;width:2px;display:inline-block;}
+	
+	.head .shopping-cart{position:absolute;left:90px;right:1em;display:inline-block;line-height:50px;padding-left:.5em;font-size:135%;text-shadow:0 -1px 0 #666; text-align:left;}
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="css/common-v4.4.css">
+	
+
+		<link rel="stylesheet" type="text/css" href="css/order.css">
+
+	</head>
+
+	<body class="body-gray">
+
+		<!--topbar begin-->
+		<section class="head">
+			<a href="javascript:void(0)" onclick="window.history.go(-1)" class="head_back"><i class="icon-back"></i></a>
+			<h2>订单详情</h2>
+			<a href="index.aspx" class="icon-home"></a>
+			<div class="popup" id="popup" style="display: none">
+			</div>
+		</section>
+		<!--content begin-->
+
+		<div class="order-detail mt-45">
+			<div class="common-wrapper pad55">
+				<input type="hidden" id="orderId" value="17736811196">
+				<input type="hidden" id="passKey" value="72b2d61d0e147ac010a1e8d08e811ac5)">
+				<input type="hidden" id="sid" value="724856949fcbde4568cc2280c9eddca2">
+				<input type="hidden" id="from" value="newUserAllOrderList">
+				<!--订单信息栏-->
+				<div class="m step1 border-1px">
+					<div class="order-info-box">
+						<div class="mt  cf">
+							<div class="floatL">订单号:<span class="s1-num">17736811196</span></div>
+						</div>
+					</div>
+
+					<!--物流信息栏-->
+					<a id="orderTrack" href="/user/orderTracking.action?passKey=72b2d61d0e147ac010a1e8d08e811ac5&amp;sid=724856949fcbde4568cc2280c9eddca2&amp;orderId=17736811196" class="a-link bdt-1px">
+						<div class="mc">
+							<div class="s1-l">
+								<div class="cf car-box">
+									<span class="car-icon"></span>
+									<p class="flex-content">感谢您在炫色数码购物，欢迎您再次光临！</p>
+								</div>
+								<span class="s-point"></span>
+							</div>
+						</div>
+					</a>
+					<div class="signet"></div>
+				</div>
+				<!--用户地址栏-->
+				<div class="step2 border-1px">
+					<div class="m step2-in ">
+						<div class="mt">
+							<div class="s2-name"><i></i>蒋雪锋</div>
+							<div class="s2-phone"><i></i>189****8450</div>
+						</div>
+						<div class="mc step2-in-con">江苏苏州市工业园区斜塘镇苏州奖多多科技有限公司-工业园区若水路388号H幢201</div>
+					</div>
+					<b class="s2-borderT"></b>
+					<b class="s2-borderB"></b>
+				</div>
+
+				<!--商品列表-->
+				<div class="m step3 border-1px">
+					<div class="mt cf">
+						<span class="jd-icon"></span><span class="shop-name">炫色数码</span>
+					</div>
+					<div class="mc">
+						<a href="http://item.m.jd.com/product/410377.html" class="a-link">
+							<div class="s-item bdt-1px" style="display: block;">
+								<div class="pdiv">
+									<div class="sitem-l">
+										<div class="sl-img-box">
+											<div class="sl-img"><img src="http://m.360buyimg.com/n4/g5/M00/02/11/rBEIDE_RwkUIAAAAAADqg0X_nqUAAAfrgOfwBUAAOqb518.jpg!q70.jpg"></div>
+										</div>
+									</div>
+									<div class="sitem-m">
+										<p class="sitem-m-txt">西门子（SIEMENS）5UB06193NC01 品宜系列五孔带开关插座 (雅白色)</p>
+										<p class="s3-num">x1</p>
+									</div>
+									<div class="sitem-r">¥18.80 </div>
+								</div>
+							</div>
+						</a>
+						<div class="step3-more" style="display: none;">
+							<strong>还有<i>-2</i>件</strong><span class="s3-down"></span>
+						</div>
+					</div>
+				</div>
+				<!--支付方式  配送信息  发票信息 -->
+				<div class="m step4 border-1px">
+					<div class="mt bdb-1px cf">
+						<h2 class="invoice-left">支付方式</h2><span class="invoice-right">在线支付</span>
+					</div>
+					<div class="mc">
+						<div class="send01 bdb-1px change-p">
+							<div class="distribe cf">
+								<h3 class="invoice-left">配送信息</h3><span class="invoice-right">炫色数码快递</span>
+							</div>
+							<div class="s4-con">
+								<div class="s4-l">
+									<p>送货日期：工作日、双休日与假日均可送货</p>
+									<p class="change-m">配送时间：15:00-19:00</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mc bdb-1px change-p">
+						<div class="distribe cf">
+							<h3 class="invoice-left">发票信息</h3>
+							<span class="invoice-right">电子发票 
+																	<a style="color:red" href="http://storage.jd.com/eicore.fm.jd.com/031001600111-11794745.pdf?Expires=2461920859&amp;AccessKey=bfac05320eaf11cc80cf1823e4fb87d98523fc94&amp;Signature=c5gtD5P5xxPDfe3UHA6VCncynnk%3D">点击查看</a>
+															</span>
+						</div>
+						<div class="s4-con">
+							<div class="s4-l">
+								<p>发票抬头:个人</p>
+								<p>发票内容:明细</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--label展示-->
+				<div class="step5 border-1px">
+					<div class="s5-item-w bdb-1px">
+						<div class="s-item size15">
+							<div class="sitem-l">
+								商品总额
+							</div>
+							<div class="sitem-r">
+								¥18.80
+							</div>
+						</div>
+						<div class="s-item">
+							<div class="sitem-l">
+								-返现
+							</div>
+							<div class="sitem-r">
+								¥0.00
+							</div>
+						</div>
+						<div class="s-item">
+							<div class="sitem-l">
+								+运费
+							</div>
+							<div class="sitem-r">
+								¥0.00
+							</div>
+						</div>
+					</div>
+					<div class="s5-sum">
+						<div>实付款:<span>¥18.80</span></div>
+						<p>下单时间:2016-04-29 10:20:48</p>
+					</div>
+				</div>
+				<!--底部按钮 根据状态判断按钮显示个数   具体按钮是不是显示服务端下发字段判断-->
+				<div class="btn-bar">
+					<div class="bb-info">
+						<div class="bottom-but"><a id="buyAgain" name="2" skus="410377" href2="http://p.m.jd.com/cart/addWares.action?wareInfos=410377@@1&amp;wareFrom=v" class="bb-btn1-red">再次购买</a></div>
+
+						<div class="bottom-but">
+							<a href="/user/getSurveyById.action?orderId=17736811196&amp;orderType=0&amp;sid=724856949fcbde4568cc2280c9eddca2" class="bb-btn1-box" id="publishBtn">
+								<div class="bb-btn1">满意度评价</div>
+							</a>
+						</div>
+
+						<div class="bottom-but">
+							<a id="aftersale" href="http://m.mrd.jd.com/afs/orders?orderId=17736811196&amp;sid=724856949fcbde4568cc2280c9eddca2" class="bb-btn1-box">
+								<div class="bb-btn1">返修/退换</div>
+							</a>
+						</div>
+
+						<div class="bottom-but">
+							<a href="javascript:;" class="bb-btn1-box" id="deleteOrderBtn">
+								<div class="bb-btn1">删除订单</div>
+							</a>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!--content end-->
+
+		<!--content end-->
+		<div id="pay" style="display: none"></div>
+
+	</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>订单详情2</title>
+		<link rel="stylesheet" type="text/css" href="css/foundation.css">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<style type="text/css">
+			/*top bar*/
+	.head{position:fixed;top:0;left:0;right:0;height:44px;background:#f8f8f8;border-bottom:1px solid #f0f0f0;padding-left:12px;z-index:2}
+	.head a.head_back,
+	.head .icon-home{position:absolute;top:0;width:32px;height:44px;line-height:44px;color:#333;text-align:center;}
+	.head a.head_back:hover{color:#333;}
+	.head .head_back{left:0px;font-size:28px;}
+	.head .icon-home{right:10px;font-size:38px;}
+	.head a{color:#e9ece8;position:absolute;display:inline-block;}
+	.head a.head_city{top:37px;left:145px;font-size:101%;font-weight:bold;text-shadow:0 -1px 0 #666}
+	.head a.head_city:before{content:"";display:inline-block;width:0;height:0;border-width:8px;overflow:hidden;border-color:#fff transparent transparent transparent;border-style:solid dotted dotted;-webkit-transform:rotate(-45deg);position:absolute;right:-25px;top:20px}
+	.head h2{position:absolute;left:50px;right:50px;display:inline-block;line-height:45px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#333;font-size:16px;font-weight:normal;}
+	.head h2:after{content:"";position:absolute;top:15px;left:0;height:50px;width:2px;display:inline-block;}
+	
+	.head .shopping-cart{position:absolute;left:90px;right:1em;display:inline-block;line-height:50px;padding-left:.5em;font-size:135%;text-shadow:0 -1px 0 #666; text-align:left;}
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="css/common-v4.4.css">
+
+		
+		<link rel="stylesheet" type="text/css" href="css/all.css">
+		<link rel="stylesheet" type="text/css" href="css/pay.css">
+
+	</head>
+
+	<body class="body-gray">
+
+		<!--topbar begin-->
+		<section class="head">
+			<a href="javascript:void(0)" onclick="window.history.go(-1)" class="head_back"><i class="icon-back"></i></a>
+			<h2>支付</h2>
+			<a href="index.aspx" class="icon-home"></a>
+			<div class="popup" id="popup" style="display: none">
+			</div>
+		</section>
+		
+		
+		<div class="order-bar-wrap order-bar-wrap-m">
+                <div class="home-notice-wrap">
+                </div>
+                <div class="order-bar">
+                    <span class="JS-pay-tip pay-tip">订单金额</span>
+                    <span class="pay-total">
+                        <strong class="JS-pay-total"><em class="pay-total-icon inited"></em>149.00元</strong>
+                    </span>
+                </div>
+        </div>
+        
+        <div class="JS-page-ct page-ct  position-change page-ct-m" style="background: #ffffff;">
+                <div class="JS-page-scorller" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+                    <ul class="list pay-list default-pay-list">
+                        
+                    </ul>                
+                    <h2 class="title-bar other-pay-title-bar">其它支付方式</h2> 
+                    <ul class="list pay-list other-pay-list" style="display: block;">
+                                                         
+                    <li class="list-item list-link-item pay-list-item other-pay-list-item weixin-pay" style="display: list-item;"><a href="javascript:void(0);" class="list-link"><span class="pay-icon"></span><span class="title-main">微信支付</span><span class="title-vice">仅安装微信6.0.2 及以上版本客户端使用</span></a></li>
+                    <li class="list-item list-link-item pay-list-item other-pay-list-item quick-pay" style="display: list-item;"><a href="javascript:void(0);" class="list-link"><span class="pay-icon"></span><span class="title-main">银联支付</span><span class="title-vice">快捷支付服务</span></a></li>
+                    <li class="list-item list-link-item pay-list-item other-pay-list-item net-bank" style="display: list-item;"><a href="javascript:void(0);" class="list-link"><span class="pay-icon"></span><span class="title-main">支付宝支付</span><span class="title-vice"> 安全极速支付</span></a></li>
+                    </ul>             
+                    <div class="COMM_FIXED_QQ_NAV_BAR"></div>
+                </div>
+            </div>    
+
+	
+
+	</body>
+
+</html>

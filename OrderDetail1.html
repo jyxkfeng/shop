@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>订单详情1</title>
+		<link rel="stylesheet" type="text/css" href="css/foundation.css">
+		
+		<style type="text/css">
+			/*top bar*/
+			
+			.head {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 44px;
+				background: #f8f8f8;
+				border-bottom: 1px solid #f0f0f0;
+				padding-left: 12px;
+				z-index: 2
+			}
+			
+			.head a.head_back,
+			.head .icon-home {
+				position: absolute;
+				top: 0;
+				width: 32px;
+				height: 44px;
+				line-height: 44px;
+				color: #333;
+				text-align: center;
+			}
+			
+			.head a.head_back:hover {
+				color: #333;
+			}
+			
+			.head .head_back {
+				left: 0px;
+				font-size: 28px;
+			}
+			
+			.head .icon-home {
+				right: 10px;
+				font-size: 38px;
+			}
+			
+			.head a {
+				color: #e9ece8;
+				position: absolute;
+				display: inline-block;
+			}
+			
+			.head a.head_city {
+				top: 37px;
+				left: 145px;
+				font-size: 101%;
+				font-weight: bold;
+				text-shadow: 0 -1px 0 #666
+			}
+			
+			.head a.head_city:before {
+				content: "";
+				display: inline-block;
+				width: 0;
+				height: 0;
+				border-width: 8px;
+				overflow: hidden;
+				border-color: #fff transparent transparent transparent;
+				border-style: solid dotted dotted;
+				-webkit-transform: rotate(-45deg);
+				position: absolute;
+				right: -25px;
+				top: 20px
+			}
+			
+			.head h2 {
+				position: absolute;
+				left: 50px;
+				right: 50px;
+				display: inline-block;
+				line-height: 45px;
+				text-align: center;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				color: #333;
+				font-size: 16px;
+				font-weight: normal;
+			}
+			
+			.head h2:after {
+				content: "";
+				position: absolute;
+				top: 15px;
+				left: 0;
+				height: 50px;
+				width: 2px;
+				display: inline-block;
+			}
+			
+			.head .shopping-cart {
+				position: absolute;
+				left: 90px;
+				right: 1em;
+				display: inline-block;
+				line-height: 50px;
+				padding-left: .5em;
+				font-size: 135%;
+				text-shadow: 0 -1px 0 #666;
+				text-align: left;
+			}
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="css/common-v4.4.css">
+		<link rel="stylesheet" type="text/css" href="css/person-v4.4.css">
+
+	</head>
+
+	<body class="body-gray">
+
+		<!--topbar begin-->
+		<section class="head">
+			<a href="javascript:void(0)" onclick="window.history.go(-1)" class="head_back"><i class="icon-back"></i></a>
+			<h2>订单详情</h2>
+			<a href="index.aspx" class="icon-home"></a>
+			<div class="popup" id="popup" style="display: none">
+			</div>
+		</section>
+		<!--content begin-->
+
+		<div class="order-detail mt-45">
+
+			<!--summary begin-->
+			<section class="order-detail-infor">
+				<div class="order-detail-sum clear">
+					<div class="sum-l order-detail-l">
+						<i class="icon-orders-small"></i>
+					</div>
+					<div class="sum-r order-detail-r">
+						<ul class="sum-r-ul">
+							<li>
+
+								<span class="status">已作废</span>
+
+							</li>
+							<li><span class="label">订单号：</span><span class="value">160423194610950012</span></li>
+							<li><span class="label">下单时间：</span><span class="value">2016/4/23 19:46:48</span></li>
+
+						</ul>
+					</div>
+				</div>
+			</section>
+			<!--summary end-->
+
+			<!--address begin-->
+			<section class="order-detail-address">
+				<div class="address-out clear">
+					<div class="address-l order-detail-l">
+						<i class="icon-address-small"></i>
+					</div>
+					<div class="address-r order-detail-r">
+						<ul class="address-r-ul">
+							<li class="name"><span class="label">收货人：</span><span class="value">蒋雪锋&nbsp;&nbsp;&nbsp;</span><span class="value">18912608450</span></li>
+							<li><span class="label">收货地址：</span><span class="value">黑龙江省齐齐哈尔市建华区忘记了</span></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<!--address end-->
+			<!--logistics begin-->
+			<section id="Logistics" class="order-detail-logistics" style="display: none">
+				<a href="ViewLogistics.aspx?OrderNumber=160423194610950012" class="logistics-out">
+					<span class="leftpoint">&nbsp;</span>
+					<span class="leftline"></span>
+					<div class="log-r order-detail-r">
+						<ul class="log-r-ul">
+							<li><span class="label log-title">物流信息</span></li>
+							<li><span class="log-msg" id="LogisticsMsg"></span></li>
+							<li><span class="log-time" id="LogisticsTime"></span></li>
+						</ul>
+					</div>
+				</a>
+				<i class="arrow"></i>
+			</section>
+			<section id="NoLogistics" class="order-detail-noLogistics" style="display: block;">
+				<div class="noLogistics-out clear">
+					<div class="noLogistics-l order-detail-l">
+						<i class="icon-double-round"></i>
+					</div>
+					<div class="noLogistics-r order-detail-r">
+						<ul class="noLogistics-r-ul">
+							<li><span class="label log-title">物流信息</span></li>
+							<li><span class="alert-no">抱歉。该订单暂无物流进展</span></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<!--logistics end-->
+			<!--remark end-->
+			<section class="order-detail-remark">
+				<div class="remark-out clear">
+					<div class="remark-l order-detail-l">
+						<i class="icon-talks-small"></i>
+					</div>
+					<div class="remark-r order-detail-r">
+						<ul class="remark-r-ul">
+							<li class="name"><span class="label">买家留言</span></li>
+							<li><span class="label"></span></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<!--remark end-->
+			<!--pintuan_progress begin-->
+
+			<!--product begin-->
+			<div class="list-myorder">
+
+				<ul class="ul-product">
+
+					<li>
+						<span class="pic">
+                        <img src="http://images.web08.com.cn/12004mcm.web08.com.cn/20160409043418280470.jpg?imageView2/2/w/140/q/70"></span>
+						<div class="text">
+							<span class="pro-name">【限时秒杀】玫瑰补水保湿系列</span>
+
+							<div class="pro-pric"><span>价格:</span>￥280.00</div>
+
+							<div class="pro-pec"><span class="color"></span><span>数量:1</span></div>
+
+							<div class="pro-return">
+
+							</div>
+
+						</div>
+					</li>
+
+				</ul>
+				<div class="money-content">
+					<div class="money-row">
+						<span class="name">运费：</span>
+						<span class="price">0.00</span>
+					</div>
+
+					<div class="totle-money-row">
+						<span class="name">实付款（含运费）：</span>
+						<span class="price">
+                        0.00
+                        
+                    </span>
+					</div>
+
+				</div>
+			</div>
+
+			<!--product end-->
+		</div>
+
+		<div class="bottom-btn-row clear">
+
+			<!--拼团详情 begin-->
+
+			<!--拼团详情 end-->
+		</div>
+		<!--content end-->
+
+		<!--content end-->
+		<div id="pay" style="display: none"></div>
+
+	</body>
+
+</html>

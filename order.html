@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>我的订单</title>
+		<link rel="stylesheet" type="text/css" href="css/foundation.css">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/foundation.js"></script>
+		<script src="js/foundation.tab.js"></script>
+		<style type="text/css">
+			/*top bar*/
+			
+			.head {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 44px;
+				background: #f8f8f8;
+				border-bottom: 1px solid #f0f0f0;
+				padding-left: 12px;
+				z-index: 2
+			}
+			
+			.head a.head_back,
+			.head .icon-home {
+				position: absolute;
+				top: 0;
+				width: 32px;
+				height: 44px;
+				line-height: 44px;
+				color: #333;
+				text-align: center;
+			}
+			
+			.head a.head_back:hover {
+				color: #333;
+			}
+			
+			.head .head_back {
+				left: 0px;
+				font-size: 28px;
+			}
+			
+			.head .icon-home {
+				right: 10px;
+				font-size: 38px;
+			}
+			
+			.head a {
+				color: #e9ece8;
+				position: absolute;
+				display: inline-block;
+			}
+			
+			.head a.head_city {
+				top: 37px;
+				left: 145px;
+				font-size: 101%;
+				font-weight: bold;
+				text-shadow: 0 -1px 0 #666
+			}
+			
+			.head a.head_city:before {
+				content: "";
+				display: inline-block;
+				width: 0;
+				height: 0;
+				border-width: 8px;
+				overflow: hidden;
+				border-color: #fff transparent transparent transparent;
+				border-style: solid dotted dotted;
+				-webkit-transform: rotate(-45deg);
+				position: absolute;
+				right: -25px;
+				top: 20px
+			}
+			
+			.head h2 {
+				position: absolute;
+				left: 50px;
+				right: 50px;
+				display: inline-block;
+				line-height: 45px;
+				text-align: center;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				color: #333;
+				font-size: 16px;
+				font-weight: normal;
+			}
+			
+			.head h2:after {
+				content: "";
+				position: absolute;
+				top: 15px;
+				left: 0;
+				height: 50px;
+				width: 2px;
+				display: inline-block;
+			}
+			
+			.head .shopping-cart {
+				position: absolute;
+				left: 90px;
+				right: 1em;
+				display: inline-block;
+				line-height: 50px;
+				padding-left: .5em;
+				font-size: 135%;
+				text-shadow: 0 -1px 0 #666;
+				text-align: left;
+			}
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="css/common-v4.4.css">
+		<link rel="stylesheet" type="text/css" href="css/person-v4.4.css">
+	</head>
+
+	<body>
+		<!--topbar begin-->
+		<section class="head">
+			<a href="javascript:void(0)" onclick="window.history.go(-1)" class="head_back"><i class="icon-back"></i></a>
+			<h2>购物车</h2>
+			<a href="index.aspx" class="icon-home"></a>
+			<div class="popup" id="popup" style="display: none">
+			</div>
+		</section>
+
+		<div class="clear"></div>
+		<!--topbar end-->
+		<div class="main myorder">
+			<!--table begin-->
+			<dl class="tabs tab-title3-4" data-tab="">
+				<dd class="active"><a href="#panel2-1">全部</a></dd>
+				<dd><a href="#panel2-2">待付款</a></dd>
+				<dd><a href="#panel2-3">待发货</a></dd>
+				<dd><a href="#panel2-4">待收货</a></dd>
+			</dl>
+			<!--table end-->
+			<!--content begin-->
+			<div class="tabs-content">
+				<!--all begin-->
+				<div class="content active" id="panel2-1">
+
+					<div style="display: ;">
+
+						<!--01 begin-->
+						<div class="list-myorder">
+							<div class="ordernumber"><span class="order-num">160425143889160002</span><span class="order-date">2016/4/25 14:38:37</span></div>
+							<ul class="ul-product">
+
+								<li>
+									<a href="MyOrderDetail.aspx?orderid=906">
+										<span class="pic">
+                                        <img src="http://images.web08.com.cn/12004mcm.web08.com.cn/20160409043418280470.jpg?imageView2/2/w/140/q/70"></span>
+										<div class="text">
+											<span class="pro-name">【限时秒杀】玫瑰补水保湿系列</span>
+											<div class="pro-pric">
+
+												<span>价格:</span>￥280.00
+
+											</div>
+
+											<div class="pro-pec">
+												<span>规格:</span></div>
+										</div>
+
+									</a>
+
+									<div class="div-return">
+
+									</div>
+								</li>
+
+							</ul>
+
+							<div class="totle">
+								<span class="status">待付款</span>
+								<span class="price">￥280.00</span>
+								<span class="pric-lable">总价</span>
+
+								<span class="prc-num">共1件</span>
+							</div>
+
+							<div class="div-button">
+
+								<a href="javascript:void(0)" onclick="gotoPay(this)" paytype="wxpay" xhref="../../member/WxPay.aspx?showwxpaytitle=1&amp;shopCode=C001&amp;ordernumber=160425143889160002" class="button [radius round] red">立即付款</a>
+
+								<a onclick="orderCancel(this)" ordernumber="160425143889160002" class="button [radius round] gray">取消订单</a>
+
+							</div>
+						</div>
+						<!--01 end-->
+
+						<!--01 begin-->
+						<div class="list-myorder">
+							<div class="ordernumber"><span class="order-num">160423194610950012</span><span class="order-date">2016/4/23 19:46:48</span></div>
+							<ul class="ul-product">
+
+								<li>
+									<a href="MyOrderDetail.aspx?orderid=893">
+										<span class="pic">
+                                        <img src="http://images.web08.com.cn/12004mcm.web08.com.cn/20160409043418280470.jpg?imageView2/2/w/140/q/70"></span>
+										<div class="text">
+											<span class="pro-name">【限时秒杀】玫瑰补水保湿系列</span>
+											<div class="pro-pric">
+
+												<span>价格:</span>￥280.00
+
+											</div>
+
+											<div class="pro-pec">
+												<span>规格:</span></div>
+										</div>
+
+									</a>
+
+									<div class="div-return">
+
+									</div>
+								</li>
+
+							</ul>
+
+							<div class="totle">
+								<span class="status">已作废</span>
+								<span class="price">￥280.00</span>
+								<span class="pric-lable">总价</span>
+
+								<span class="prc-num">共1件</span>
+							</div>
+
+							<div class="div-button">
+
+							</div>
+						</div>
+						<!--01 end-->
+
+					</div>
+
+				</div>
+				<!--all end-->
+
+				<!--wait pay begin-->
+				<div class="content" id="panel2-2">
+
+					<!--none begin-->
+					<div class="myorder-none"><i class="icon-none"></i><span class="nonetext">你还没有订单！</span><a href="../../" class="nonelink">去逛逛</a></div>
+					<!--none end-->
+
+				</div>
+				<!--wait pay end-->
+				<!--wait recevie begin-->
+				<div class="content" id="panel2-3">
+
+					<!--none begin-->
+					<div class="myorder-none"><i class="icon-none"></i><span class="nonetext">你还没有订单！</span><a href="../../" class="nonelink">去逛逛</a></div>
+					<!--none end-->
+
+				</div>
+				<!--wait recevie end-->
+				<!--close begin-->
+				<div class="content" id="panel2-4">
+
+					<!--none begin-->
+					<div class="myorder-none"><i class="icon-none"></i><span class="nonetext">你还没有订单！</span><a href="../../" class="nonelink">去逛逛</a></div>
+					<!--none end-->
+
+				</div>
+				<!--close end-->
+			</div>
+			<!--content begin-->
+			<div id="pay" style="display: none"></div>
+		</div>
+		<script>
+			$(document).foundation().foundation('joyride', 'start');
+		</script>
+
+	</body>
+
+</html>

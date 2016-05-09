@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>订单详情2</title>
+		
+		<style type="text/css">
+			/*top bar*/
+	.head{position:fixed;top:0;left:0;right:0;height:44px;background:#f8f8f8;border-bottom:1px solid #f0f0f0;padding-left:12px;z-index:2}
+	.head a.head_back,
+	.head .icon-home{position:absolute;top:0;width:32px;height:44px;line-height:44px;color:#333;text-align:center;}
+	.head a.head_back:hover{color:#333;}
+	.head .head_back{left:0px;font-size:28px;}
+	.head .icon-home{right:10px;font-size:38px;}
+	.head a{color:#e9ece8;position:absolute;display:inline-block;}
+	.head a.head_city{top:37px;left:145px;font-size:101%;font-weight:bold;text-shadow:0 -1px 0 #666}
+	.head a.head_city:before{content:"";display:inline-block;width:0;height:0;border-width:8px;overflow:hidden;border-color:#fff transparent transparent transparent;border-style:solid dotted dotted;-webkit-transform:rotate(-45deg);position:absolute;right:-25px;top:20px}
+	.head h2{position:absolute;left:50px;right:50px;display:inline-block;line-height:45px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#333;font-size:16px;font-weight:normal;}
+	.head h2:after{content:"";position:absolute;top:15px;left:0;height:50px;width:2px;display:inline-block;}
+	
+	.head .shopping-cart{position:absolute;left:90px;right:1em;display:inline-block;line-height:50px;padding-left:.5em;font-size:135%;text-shadow:0 -1px 0 #666; text-align:left;}
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="css/common-v4.4.css">
+
+		
+		
+			
+		<link rel="stylesheet" type="text/css" href="css/base.css">	
+
+
+	</head>
+
+	<body class="body-gray">
+
+		<!--topbar begin-->
+		<section class="head">
+			<a href="javascript:void(0)" onclick="window.history.go(-1)" class="head_back"><i class="icon-back"></i></a>
+			<h2>支付</h2>
+			<a href="index.aspx" class="icon-home"></a>
+			<div class="popup" id="popup" style="display: none">
+			</div>
+		</section>
+		
+		
+		<div class="grid" style="background: #f2f2f2;margin-top: 0; width: 100%; overflow:hidden">
+    <div class="safety-notice">
+        <img src="/wepay/images/safety-icon.png">
+        您正在安全支付环境中，请放心付款
+    </div>
+    <div class="orderInfo">
+        <h1>付款金额</h1>
+
+        <div class="money">
+           <span class="J_payMoney" data-paymoney="18.80">18.80</span>
+           <span class="fs14 black6 unit">元</span>
+            <p class="i-reduce J_reduce" style="display: none;"><span>已优惠</span><em>5元</em></p>
+            
+        </div>
+        <div class="orderDetail">
+            <div class="infoItem clearfix">
+                <span class="label">收款方</span>
+
+                <div class="infoCon">商城移动</div>
+            </div>
+            <div class="infoItem clearfix">
+                <span class="label">商　品</span>
+
+                <div class="infoCon">商城-订单编号18700765824</div>
+            </div>
+        </div>
+    </div>
+
+    <!--form start-->
+    <ul class="form-wrap">
+        <form action="/wepay/web/pay/sign" method="post" id="checkBankForm" autocomplete="off" data-type="payByCards" class="errorMsgRequest">
+            <!--交易信息 start-->
+
+
+            <li class="form-item form-item-border clearfix J-info-btn" id="J-select-bank" data-show="modal-cardlist" clstag="wyplus|D|change">
+                <span class="arrowRight"></span>
+                <label style="width: auto;">招商银行储蓄卡(尾号 4894) </label>
+            </li>
+
+            <li class="form-item form-item-border clearfix hidden" id="J-carddate-item" style="display: none;">
+                <label>有效期</label>
+                <div class="form-field">
+                    <input type="tel" class="J-check-input" name="validDate" value="" disabled="" placeholder="月/年 03/16" maxlength="5" data-format="date" data-backspace="date" data-callback="input.status">
+                    <span class="clear-btn J-clear-btn">×</span>
+                    <span class="info-btn J-info-btn" data-show="modal-carddate"></span>
+                    <div class="error-info animate" data-info="有效期格式错误"><em></em>有效期格式错误</div>
+                </div>
+            </li>
+
+            <li class="form-item form-item-border clearfix hidden" id="J-cardcvv-item" style="display: none;">
+                <label>安全码</label>
+                <div class="form-field">
+                    <input type="tel" class="J-check-input" name="cvv" value="" disabled="" placeholder="卡背数字后3位" maxlength="3" data-format="num3" data-callback="input.status">
+                    <span class="clear-btn J-clear-btn">×</span>
+                    <span class="info-btn J-info-btn" data-show="modal-cardcvv"></span>
+                    <div class="error-info animate" data-info="安全码格式错误"><em></em>安全码格式错误</div>
+                </div>
+            </li>
+
+        </form>
+    </ul>
+    <!--form end-->
+</div>
+
+<div class="grid94 pd40" style="margin-top: 20px;">
+    <span id="J-next-btn" class="btn btn-disabled mt15 btn-actived" clstag="wyplus|D|submit" data-enabled="true">去支付</span>
+</div>
+
+	
+
+	</body>
+
+</html>
